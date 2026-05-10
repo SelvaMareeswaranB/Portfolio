@@ -6,7 +6,7 @@ import { portfolioSlugs } from "../constants/slugs";
 import { ArrowRight, Download } from "lucide-react";
 
 
-const RESUME_URL = "https://drive.google.com/uc?export=download&id=1ouKUxMLHOHLgdPqiJuBtqYM3uHZbiL1R";
+const RESUME_URL = "https://drive.google.com/file/d/1ouKUxMLHOHLgdPqiJuBtqYM3uHZbiL1R/view?usp=drive_link";
 
 export default function HeroSection() {
   return (
@@ -32,8 +32,8 @@ export default function HeroSection() {
             <span className="origin-[70%_70%] animate-wave text-2xl">
               👋
             </span>
-              <span className="text-lg text-slate-600 dark:text-neutral-400">
-              I'm 
+            <span className="text-lg text-slate-600 dark:text-neutral-400">
+              I'm
             </span>
           </div>
 

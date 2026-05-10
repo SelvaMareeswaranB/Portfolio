@@ -22,14 +22,14 @@ interface HyperTextProps {
 export default function HyperText({ className }: HyperTextProps) {
   const [isJapanese, setIsJapanese] = useState(false);
   const [displayText, setDisplayText] = useState(ENGLISH_TEXT.split(""));
-  
+
   const targetText = isJapanese ? JAPANESE_TEXT : ENGLISH_TEXT;
   const iterations = useRef(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const runMorphAnimation = (toText: string, useJapaneseChars: boolean) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    
+
     iterations.current = 0;
     const textLength = toText.length;
     const intervalDelay = DURATION / (textLength * 10);
@@ -53,7 +53,7 @@ export default function HyperText({ className }: HyperTextProps) {
             return getRandomChar(charPool);
           });
         });
-        
+
         iterations.current += 0.15; // Controls the speed of the transition
       } else {
         setDisplayText(toText.split(""));
@@ -80,7 +80,7 @@ export default function HyperText({ className }: HyperTextProps) {
 
   return (
     <div
-      className="cursor-default scale-100 overflow-hidden py-2"
+      className="flex justify-center md:justify-start cursor-default scale-100 overflow-hidden py-2"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -89,8 +89,8 @@ export default function HyperText({ className }: HyperTextProps) {
           <motion.span
             key={`${targetText}-${i}`} // Layout animation triggers on key/size change
             className={cn(
-              "font-mono transition-colors duration-300", 
-              letter === " " ? "w-[0.5em]" : "", 
+              "font-mono transition-colors duration-300",
+              letter === " " ? "w-[0.5em]" : "",
               className
             )}
             layout

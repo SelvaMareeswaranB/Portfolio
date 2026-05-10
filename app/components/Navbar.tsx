@@ -38,21 +38,18 @@ export function Navbar() {
                                 href={item.href}
                                 className={`relative text-sm font-medium transition-colors duration-200 ${isActive
                                     ? "text-sky-500 dark:text-sky-400"
-                                    : "text-foreground/80 hover:text-foreground"
+                                    : "text-foreground/80 hover:text-sky-500 dark:hover:text-sky-400"
                                     }`}
                             >
                                 {item.label}
 
                                 {/* Active Underline */}
                                 {isActive && (
-                                    <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-sky-500 dark:bg-sky-400" />
+                                    <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-sky-500 transition-colors duration-200 dark:bg-sky-400" />
                                 )}
                             </Link>
                         );
                     })}
-
-
-             
 
                     {/* Theme Toggle */}
                     <ThemeToggle />
@@ -71,6 +68,7 @@ export function Navbar() {
                 </div>
             </nav>
 
+            {/* Mobile Navigation */}
             {isOpen && (
                 <div className="border-t border-border-custom bg-background px-4 py-4 transition-colors duration-300 md:hidden animate-in slide-in-from-top duration-200">
                     <div className="flex flex-col gap-2">
@@ -84,15 +82,13 @@ export function Navbar() {
                                     onClick={() => setIsOpen(false)}
                                     className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-200 ${isActive
                                         ? "bg-sky-50 text-sky-600 dark:bg-neutral-900 dark:text-sky-400"
-                                        : "text-foreground/80 hover:bg-slate-100 dark:hover:bg-neutral-900"
+                                        : "text-foreground/80 hover:bg-slate-100 hover:text-sky-500 dark:hover:bg-neutral-900 dark:hover:text-sky-400"
                                         }`}
                                 >
                                     {item.label}
                                 </Link>
                             );
                         })}
-
-                   
                     </div>
                 </div>
             )}
