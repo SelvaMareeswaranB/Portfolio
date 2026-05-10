@@ -15,7 +15,6 @@ const NAV_ITEMS = [
 ];
 
 // Direct Google Drive download link for your resume
-const RESUME_URL = "https://drive.google.com/uc?export=download&id=1ouKUxMLHOHLgdPqiJuBtqYM3uHZbiL1R";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -52,21 +51,8 @@ export function Navbar() {
                         );
                     })}
 
-                    {/* Divider */}
-                    <div className="h-5 w-px bg-border-custom transition-colors duration-300" />
 
-                    {/* Desktop Resume Download Button */}
-                    <a
-                        href={RESUME_URL}
-                        download="Selva_Mareeswaran_Resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 rounded-lg border border-border-custom bg-background px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-slate-50 hover:scale-[1.02] active:scale-[0.98] dark:hover:bg-neutral-900"
-                        aria-label="Download Resume"
-                    >
-                        <ArrowDownToLine className="h-4 w-4 text-sky-500 dark:text-sky-400" />
-                        <span>Resume</span>
-                    </a>
+             
 
                     {/* Theme Toggle */}
                     <ThemeToggle />
@@ -106,17 +92,7 @@ export function Navbar() {
                             );
                         })}
 
-                        <a
-                            href={RESUME_URL}
-                            download="Selva_Mareeswaran_Resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setIsOpen(false)}
-                            className="flex items-center justify-center gap-2 mt-2 w-full rounded-lg border border-border-custom bg-background py-3 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-slate-50 active:scale-[0.99] dark:hover:bg-neutral-900"
-                        >
-                            <ArrowDownToLine className="h-4 w-4 text-sky-500 dark:text-sky-400" />
-                            <span>Download Resume</span>
-                        </a>
+                   
                     </div>
                 </div>
             )}
