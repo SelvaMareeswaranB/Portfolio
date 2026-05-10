@@ -67,10 +67,7 @@ export default function ExperienceSection() {
           {/* Glow */}
           <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          {/* Floating Number */}
-          <div className="absolute right-8 top-6 text-7xl font-black text-orange-500/10">
-            01
-          </div>
+        
 
           <div className="relative z-10">
             

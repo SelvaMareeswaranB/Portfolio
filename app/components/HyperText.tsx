@@ -4,12 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
-// Hardcoded values
-const ENGLISH_TEXT = "SELVA MAREESWARAN";
-const JAPANESE_TEXT = "セルヴァ マリースワラン";
+// Separate the words so they wrap as whole blocks on mobile
+const ENGLISH_WORDS = ["SELVA", "MAREESWARAN"];
+const JAPANESE_WORDS = ["セルヴァ", "マリースワラン"];
 const DURATION = 600;
 
-// Scramble character pools
 const englishAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const japaneseCharacters = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんアイウエオカキクケコ".split("");
 
@@ -21,42 +20,44 @@ interface HyperTextProps {
 
 export default function HyperText({ className }: HyperTextProps) {
   const [isJapanese, setIsJapanese] = useState(false);
-  const [displayText, setDisplayText] = useState(ENGLISH_TEXT.split(""));
+  
+  // Track state for each word separately to keep animation crisp
+  const currentWords = isJapanese ? JAPANESE_WORDS : ENGLISH_WORDS;
+  const [displayWords, setDisplayWords] = useState(ENGLISH_WORDS);
 
-  const targetText = isJapanese ? JAPANESE_TEXT : ENGLISH_TEXT;
   const iterations = useRef(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const runMorphAnimation = (toText: string, useJapaneseChars: boolean) => {
+  const runMorphAnimation = (toWords: string[], useJapaneseChars: boolean) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
 
     iterations.current = 0;
-    const textLength = toText.length;
-    const intervalDelay = DURATION / (textLength * 10);
+    // Base length on total characters combined
+    const totalLength = toWords.join("").length;
+    const intervalDelay = DURATION / (totalLength * 10);
     const charPool = useJapaneseChars ? japaneseCharacters : englishAlphabets;
 
     intervalRef.current = setInterval(() => {
-      if (iterations.current < textLength) {
-        setDisplayText(() => {
-          return Array.from({ length: textLength }).map((_, i) => {
-            const targetChar = toText[i];
+      // Determine if the longest word has finished morphing
+      const maxWordLength = Math.max(...toWords.map(w => w.length));
 
-            // Keep spaces untouched
-            if (targetChar === " ") return " ";
-
-            // Lock in character once iteration threshold is passed
-            if (i <= Math.floor(iterations.current)) {
-              return targetChar;
-            }
-
-            // Scramble using matching characters
-            return getRandomChar(charPool);
+      if (iterations.current < maxWordLength) {
+        setDisplayWords(() => {
+          return toWords.map((word) => {
+            return Array.from({ length: word.length })
+              .map((_, i) => {
+                if (i <= Math.floor(iterations.current)) {
+                  return word[i];
+                }
+                return getRandomChar(charPool);
+              })
+              .join("");
           });
         });
 
-        iterations.current += 0.15; // Controls the speed of the transition
+        iterations.current += 0.18; // Speed of transition
       } else {
-        setDisplayText(toText.split(""));
+        setDisplayWords(toWords);
         if (intervalRef.current) clearInterval(intervalRef.current);
       }
     }, intervalDelay);
@@ -64,12 +65,12 @@ export default function HyperText({ className }: HyperTextProps) {
 
   const handleMouseEnter = () => {
     setIsJapanese(true);
-    runMorphAnimation(JAPANESE_TEXT, true);
+    runMorphAnimation(JAPANESE_WORDS, true);
   };
 
   const handleMouseLeave = () => {
     setIsJapanese(false);
-    runMorphAnimation(ENGLISH_TEXT, false);
+    runMorphAnimation(ENGLISH_WORDS, false);
   };
 
   useEffect(() => {
@@ -80,27 +81,32 @@ export default function HyperText({ className }: HyperTextProps) {
 
   return (
     <div
-      className="flex justify-center md:justify-start cursor-default scale-100 overflow-hidden py-2"
+      className="flex flex-wrap justify-center lg:justify-start cursor-default scale-100 py-2 select-none gap-x-3 gap-y-1"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <AnimatePresence mode="popLayout">
-        {displayText.map((letter, i) => (
-          <motion.span
-            key={`${targetText}-${i}`} // Layout animation triggers on key/size change
-            className={cn(
-              "font-mono transition-colors duration-300",
-              letter === " " ? "w-[0.5em]" : "",
-              className
-            )}
-            layout
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 3 }}
-            transition={{ type: "spring", stiffness: 350, damping: 25 }}
-          >
-            {letter}
-          </motion.span>
+        {displayWords.map((word, wordIdx) => (
+          // flex-row keep letters of a single word together, preventing letters from wrapping individually
+          <div key={`word-${wordIdx}`} className="flex items-center">
+            {word.split("").map((letter, letterIdx) => (
+              <motion.span
+                // Unique key per word + index prevents transition collision
+                key={`${currentWords[wordIdx]}-${letterIdx}`}
+                className={cn(
+                  "font-mono transition-colors duration-300 inline-block",
+                  className
+                )}
+                layout
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 3 }}
+                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </div>
         ))}
       </AnimatePresence>
     </div>
