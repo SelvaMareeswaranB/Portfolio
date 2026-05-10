@@ -2,10 +2,17 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 /* LIGHT MODE variables */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --border-color: #f1f5f9; 
+  --border-color: #f1f5f9;
   --paper-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
 
   /* Paper gradient colors */
@@ -34,7 +41,7 @@ html.dark {
   --color-foreground: var(--foreground);
   --color-border-custom: var(--border-color);
   --shadow-paper: var(--paper-shadow);
-  
+
   /* Map paper gradient tokens */
   --color-paper-from: var(--paper-from);
   --color-paper-to: var(--paper-to);
@@ -56,24 +63,31 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
   }
+
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(0deg);
   }

@@ -8,10 +8,10 @@ import { Menu, X, ArrowDownToLine } from "lucide-react";
 import { NavbarLogo } from "./NavbarLogo";
 
 const NAV_ITEMS = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
 ];
 
 // Direct Google Drive download link for your resume

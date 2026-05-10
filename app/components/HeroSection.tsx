@@ -10,7 +10,7 @@ const RESUME_URL = "https://drive.google.com/uc?export=download&id=1ouKUxMLHOHLg
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background text-foreground transition-colors duration-300">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-background text-foreground transition-colors duration-300">
 
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
