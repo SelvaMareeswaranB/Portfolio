@@ -6,7 +6,7 @@ import { portfolioSlugs } from "../constants/slugs";
 import { ArrowRight, Download } from "lucide-react";
 
 
-const RESUME_URL = "https://drive.google.com/file/d/1ouKUxMLHOHLgdPqiJuBtqYM3uHZbiL1R/view?usp=drive_link";
+const RESUME_URL = "https://drive.google.com/file/d/1nfOKReg_a02_8XE4H3JbfWlcPqXjz09l/view?usp=drive_link";
 
 export default function HeroSection() {
   return (

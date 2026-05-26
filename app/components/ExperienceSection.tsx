@@ -18,23 +18,21 @@ const highlights = [
 ];
 
 const experiences = [
-  "Spearheaded scalable enterprise applications using React, Next.js, and Zustand state management, reducing boilerplate and prop drilling by 40%.",
+  "Architected a scalable Micro-frontend ecosystem using Vite Module Federation within a Turborepo-managed monorepo and pnpm workspaces, establishing seamless code-sharing guidelines for engineering teams.",
 
-  "Implemented JWT authentication and OWASP security best practices while maintaining a 98+ Lighthouse score through accessibility-first frontend engineering.",
+  "Achieved an 80% reduction in post-production UI compliance issues by deploying cross-browser compatible, WCAG-compliant modules with secure JWT validation via AWS CloudFront.",
 
-  "Built deployment pipelines using AWS Amplify, GitHub Actions, Playwright automation, and static analysis, reducing manual QA cycles by 30%.",
+  "Led frontend feature delivery in fast-paced Agile Scrum environments, collaborating with cross-functional product teams, driving sprint planning, and conducting technical code reviews to maintain high quality standards.",
 
-  "Modernized legacy React applications by migrating to TypeScript, significantly improving type safety and reducing critical frontend bugs.",
+  "Optimized application state management by engineering a customized Zustand architecture, cutting boilerplate code and deeply nested prop-drilling by 40% across enterprise modules.",
 
-  "Integrated WebSockets for real-time chat systems and notifications alongside Recharts-powered live analytics dashboards.",
+  "Collaborated on developing and integrating RESTful APIs with Node.js and Express.js to support responsive UI experiences, secure data exchange, and optimized application performance.",
 
-  "Engineered 12+ reusable and type-safe MUI form components, improving CRM development productivity and ensuring design consistency.",
+  "Maximized organic search engine visibility and indexation performance through Next.js SSR/SSG, programmatic metadata generation, canonical tags, and structured data (Schema.org), maintaining an elite 98+ Lighthouse score.",
 
-  "Optimized GraphQL and REST API data handling using Apollo Client and integrated secure Razorpay payment workflows.",
+  "Developed low-latency WebSocket infrastructure for live chat delivery alongside interactive Recharts dashboards, while designing 12+ type-safe MUI components that reduced CRM sprint overhead by 15+ hours.",
 
-  "Architected scalable micro-frontend ecosystems using Turborepo, pnpm workspaces, and Vite Module Federation.",
-
-  "Developed an internal procurement platform using Next.js SSR and TypeScript for high-performance enterprise workflows.",
+  "Co-authored secure payment structures via Apollo Client (GraphQL/REST) and Razorpay checkout pipelines, lifting successful conversions by 15% while aligning with QA teams via Playwright automated pipelines to cut testing cycles by 30%."
 ];
 
 export default function ExperienceSection() {
@@ -67,8 +65,6 @@ export default function ExperienceSection() {
           {/* Glow */}
           <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-        
-
           <div className="relative z-10">
             
             {/* Header */}
@@ -87,7 +83,6 @@ export default function ExperienceSection() {
 
             {/* Meta */}
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-slate-600 dark:text-neutral-400">
-              
               <div className="flex items-center gap-2">
                 <CalendarDays className="h-4 w-4 text-orange-500" />
                 June 2023 - Present
