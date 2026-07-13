@@ -1,3 +1,4 @@
+
 "use client";
 
 import HyperText from "./HyperText";
@@ -5,8 +6,7 @@ import IconCloud from "./IconCloud";
 import { portfolioSlugs } from "../constants/slugs";
 import { ArrowRight, Download } from "lucide-react";
 
-
-const RESUME_URL = "https://drive.google.com/file/d/1nfOKReg_a02_8XE4H3JbfWlcPqXjz09l/view?usp=drive_link";
+const RESUME_URL = "https://drive.google.com/file/d/17EZcjo9uPzeeb8peP3nqtpgs4mNst8Hk/view?usp=drive_link";
 
 export default function HeroSection() {
   return (
@@ -43,8 +43,6 @@ export default function HeroSection() {
               className="text-4xl font-black tracking-tight text-orange-500 sm:text-5xl md:text-6xl"
             />
 
-
-
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-neutral-400">
               I engineer scalable, secure, and high-performance web applications
               using{" "}
@@ -56,15 +54,17 @@ export default function HeroSection() {
             </p>
           </div>
 
-          {/* Description */}
+          {/* Updated text using the explicit phrase "Immediate Joiner" */}
           <p className="mt-8 max-w-2xl text-base leading-8 text-slate-600 dark:text-neutral-400">
-            Currently working at{" "}
+            Having recently wrapped up building enterprise systems at{" "}
             <span className="font-semibold text-foreground">
               Iaaxin Tech Labs India Pvt Ltd
             </span>
-            , where I build enterprise-grade applications, real-time systems,
-            authentication platforms, and scalable frontend ecosystems with
-            modern React technologies and performance-first engineering.
+            , I am seeking my next full-time role and am available as an{" "}
+            <span className="font-bold text-orange-500 dark:text-orange-400">
+              immediate joiner
+            </span>{" "}
+            to deliver production-ready React infrastructure and performance-first frontend engineering.
           </p>
 
           {/* CTA */}
@@ -75,7 +75,6 @@ export default function HeroSection() {
               className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-orange-500 px-7 py-4 text-sm font-bold text-black transition-all hover:bg-orange-400 active:scale-95"
             >
               View Projects
-
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
@@ -94,9 +93,7 @@ export default function HeroSection() {
 
         {/* RIGHT CONTENT */}
         <div className="lg:col-span-5 flex items-center justify-center">
-
           <div className="relative flex aspect-square w-full max-w-[320px] items-center justify-center sm:max-w-[420px]">
-
             {/* Soft Glow */}
             <div className="absolute inset-12 rounded-full bg-orange-500/10 blur-3xl" />
 
