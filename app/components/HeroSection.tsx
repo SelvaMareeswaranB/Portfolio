@@ -6,7 +6,7 @@ import IconCloud from "./IconCloud";
 import { portfolioSlugs } from "../constants/slugs";
 import { ArrowRight, Download } from "lucide-react";
 
-const RESUME_URL = "https://drive.google.com/file/d/1xqNsPTAGOXz2yfRXsrtbhw-bk1GFQlC6/view?usp=drive_link";
+const RESUME_URL = "https://drive.google.com/file/d/1FIlAiFwsVB0JTnXEQZ1S4Iw5N3ifRfCG/view?usp=drive_link";
 
 export default function HeroSection() {
   return (

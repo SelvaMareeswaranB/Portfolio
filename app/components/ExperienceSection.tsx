@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -15,23 +14,23 @@ const careerHistory = [
     company: "Iaaxin Tech Labs India Pvt Ltd",
     location: "Karur, Tamil Nadu",
     period: "June 2025 - June 2026",
-    current: false, // Updated to reflect completed term
+    current: false,
     description:
       "Architected enterprise-grade frontend ecosystems with performance-first engineering, micro-frontends, high-frequency data streaming, and production-ready Next.js infrastructure.",
     highlights: [
-      "Micro Frontend Architecture",
-      "Real-time Communication",
-      "JWT & OWASP Security",
-      "CI/CD & Automation",
-      "Type-safe React Systems",
-      "High Performance UI",
+      "Micro Frontend Ecosystem",
+      "B2B SaaS Architecture",
+      "License Renewal Systems",
+      "Real-time WebSockets",
+      "Next.js & Performance",
+      "CloudFront Edge Routing",
     ],
     points: [
-      "Led the architectural migration to a Micro-frontend ecosystem using Vite Module Federation within a Turborepo monorepo, steering rigorous code reviews to reduce deployment cycles by 40%.",
-      "Developed a standalone e-commerce licensing panel enabling 500+ monthly clients to purchase licenses via integrated Razorpay checkout pipelines, maximizing transaction success rates.",
-      "Spearheaded a high-frequency WebSocket framework for data-heavy dashboards within a separate internal CRM platform, enabling sub-second real-time metrics streaming.",
-      "Optimized Next.js SSR/SSG infrastructure and automated metadata generation, achieving a 98+ Lighthouse score and decreasing Total Blocking Time (TBT) by 35%.",
-      "Validated interface compliance across core application modules against WCAG 2.1 AA accessibility standards for deployment to AWS CloudFront edge environments.",
+      "Developed scalable frontend components within a Micro-frontend ecosystem powered by Vite Module Federation in a Turborepo monorepo, collaborating in code reviews that reduced deployment cycles by 40%.",
+      "Engineered core multi-tenant UI architectures for a flagship B2B SaaS CRM, enforcing strict data isolation and tenant-routing structures for deployment to AWS CloudFront edge environments.",
+      "Developed a client-focused license renewal platform processing 500+ monthly recurring transactions via integrated Razorpay pipelines, maintaining high platform availability and streamlined contract workflows.",
+      "Spearheaded a high-frequency WebSocket framework for data-heavy dashboards within a separate internal platform, enabling sub-second real-time metrics streaming.",
+      "Refactored Next.js SSR/SSG infrastructure and programmatic metadata generation for AWS deployments, achieving a 98+ Lighthouse score and decreasing Total Blocking Time (TBT) by 35%.",
     ],
   },
   {
@@ -43,19 +42,19 @@ const careerHistory = [
     description:
       "Built and optimized reliable core features across enterprise SaaS applications using robust state management, modular component design, and end-to-end automation.",
     highlights: [
-      "State Optimization",
-      "Component Systems",
-      "E2E Test Automation",
-      "RESTful API Integration",
-      "RESTful API Implementation",
-      "Workflow Optimization",
+      "Agile API Integration",
+      "Material UI Component Systems",
+      "AI-Assisted Workflows",
+      "State Management Optimization",
+      "Automated Testing Suites",
+      "Cross-Functional Collaboration",
     ],
     points: [
-      "Collaborated across backend teams in an Agile microservices environment to integrate RESTful APIs using Node.js and Express.js, ensuring secure data exchanges.",
-      "Spearheaded the standardization of engineering workflows by onboarding team members to custom LLM-assisted tools, accelerating boilerplate generation and prototyping velocity.",
+      "Partnered closely with cross-functional backend teams in an Agile environment to integrate RESTful APIs and align GraphQL schemas built on Node.js and Express.js.",
+      "Communicated requirements across design and engineering teams to translate complex Figma mockups into pixel-perfect, type-safe Material UI (MUI) components documented in Storybook.",
+      "Accelerated prototyping velocity and engineering throughput by integrating LLM-assisted workflows and AI tools to generate boilerplate code.",
       "Optimized application state layers using Zustand and TanStack Query, cutting down redundant rendering loops and boilerplate logic by 40%.",
-      "Translated Figma mockups into type-safe, reusable Material UI (MUI) components documented in Storybook, reducing production bundle sizes by 25% across SaaS platforms.",
-      "Built comprehensive automated testing suites using Playwright, short-circuiting regression detection and shortening E2E testing cycles by 30%.",
+      "Built comprehensive test suites using Playwright, short-circuiting regression detection and shortening E2E production release cycles by 30%.",
     ],
   },
 ];
